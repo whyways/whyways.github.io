@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КраснодарРемонт - Ремонт квартир под ключ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #FF6B00;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .phone-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 500;
+            color: #FF6B00;
+            cursor: pointer;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .phone-btn:hover {
+            color: #e55a00;
+        }
+
+        .cta-btn {
+            padding: 12px 24px;
+            background: #FF6B00;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cta-btn:hover {
+            background: #e55a00;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.3);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 600px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 80%, rgba(255, 107, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 0, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #d0d0d0;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 16px 40px;
+            background: #FF6B00;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary:hover {
+            background: #e55a00;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 107, 0, 0.4);
+        }
+
+        .btn-secondary {
+            padding: 16px 40px;
+            background: transparent;
+            color: white;
+            border: 2px solid #FF6B00;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-secondary:hover {
+            background: #FF6B00;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 107, 0, 0.4);
+        }
+
+        /* STATS */
+        .stats {
+            padding: 80px 40px;
+            background: white;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 30px;
+            border-radius: 12px;
+            background: #f8f8f8;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: #f0f0f0;
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #FF6B00;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 80px 40px;
+            background: linear-gradient(180deg, #f8f8f8 0%, #ffffff 100%);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 60px;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #FF6B00;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: #FF6B00;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: #FF6B00;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* WHY US */
+        .why-us {
+            padding: 80px 40px;
+            background: white;
+        }
+
+        .why-us-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .why-item {
+            position: relative;
+            padding-left: 80px;
+        }
+
+        .why-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #FF6B00 0%, #ff8a33 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .why-item h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .why-item p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* PORTFOLIO */
+        .portfolio {
+            padding: 80px 40px;
+            background: linear-gradient(180deg, #f8f8f8 0%, #ffffff 100%);
+        }
+
+        .portfolio-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .portfolio-item {
+            height: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #ddd 0%, #ccc 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 107, 0, 0.1) 0%, rgba(255, 107, 0, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-item:hover::before {
+            opacity: 1;
+        }
+
+        .portfolio-label {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            backdrop-filter: blur(10px);
+        }
+
+        /* REVIEWS */
+        .reviews {
+            padding: 80px 40px;
+            background: white;
+        }
+
+        .reviews-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: #f8f8f8;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #FF6B00;
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .stars {
+            color: #FF6B00;
+            font-size: 16px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: #1a1a1a;
+            font-size: 14px;
+        }
+
+        /* FORM */
+        .form-section {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+        }
+
+        .form-section .section-title {
+            color: white;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #e0e0e0;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #555;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder {
+            color: #999;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #FF6B00;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+        }
+
+        .form-group input.error {
+            border-color: #ff4444;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: #FF6B00;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 15px;
+        }
+
+        .form-submit:hover {
+            background: #e55a00;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(255, 107, 0, 0.4);
+        }
+
+        .form-info {
+            text-align: center;
+            font-size: 13px;
+            color: #aaa;
+            line-height: 1.5;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0a0a0a;
+            color: white;
+            padding: 60px 40px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 50px;
+        }
+
+        .footer-section h3 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #FF6B00;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .footer-section p {
+            font-size: 14px;
+            color: #aaa;
+            line-height: 1.8;
+        }
+
+        .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #FF6B00;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 15px 20px;
+                flex-wrap: wrap;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 15px;
+            }
+
+            .hero {
+                min-height: 400px;
+                padding: 40px 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .stats {
+                padding: 60px 20px;
+            }
+
+            .services {
+                padding: 60px 20px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-us {
+                padding: 60px 20px;
+            }
+
+            .why-us-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 40px;
+            }
+
+            .portfolio {
+                padding: 60px 20px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-item {
+                height: 200px;
+            }
+
+            .reviews {
+                padding: 60px 20px;
+            }
+
+            .form-section {
+                padding: 60px 20px;
+            }
+
+            .form-container {
+                padding: 0 10px;
+            }
+
+            footer {
+                padding: 40px 20px 20px;
+            }
+
+            .footer-content {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .cta-btn {
+                padding: 10px 16px;
+                font-size: 12px;
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .why-item {
+                padding-left: 70px;
+            }
+
+            .why-number {
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">Краснодар<span>Ремонт</span></a>
+            <div class="header-actions">
+                <a href="tel:+79284567890" class="phone-btn">
+                    📞 +7 (928) 456-78-90
+                </a>
+                <button class="cta-btn" onclick="scrollToForm()">Оставить заявку</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Ремонт квартир в Краснодаре под ключ</h1>
+            <p>Фиксированная цена. Гарантия 2 года. Сдача в срок.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="scrollToForm()">Рассчитать стоимость</button>
+                <button class="btn-secondary" onclick="scrollToPortfolio()">Смотреть работы</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">8</div>
+                <div class="stat-label">лет на рынке</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5★</div>
+                <div class="stat-label">в 2GIS</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">340+</div>
+                <div class="stat-label">объектов сдано</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2</div>
+                <div class="stat-label">года гарантия</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services">
+        <div class="section-title">Услуги</div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔨</div>
+                <h3>Ремонт под ключ</h3>
+                <p>Полный комплекс работ от демонтажа до финальной отделки с выполнением всех коммуникаций</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Дизайн интерьера</h3>
+                <p>Профессиональное проектирование с 3D визуализацией и подбором материалов</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏗️</div>
+                <h3>Черновые работы</h3>
+                <p>Стяжки, штукатурка, гипсокартон и подготовка поверхностей под финишную отделку</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚿</div>
+                <h3>Санузел и ванная</h3>
+                <p>Полная переделка ванных комнат с установкой сантехники и плиткой</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🍳</div>
+                <h3>Кухня</h3>
+                <p>Монтаж фартука, столешницы, встроенной техники и качественная окраска</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Коммерческие помещения</h3>
+                <p>Ремонт офисов, магазинов и ресторанов с учётом специальных требований</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="why-us">
+        <div class="section-title">Почему нас выбирают</div>
+        <div class="why-us-grid">
+            <div class="why-item">
+                <div class="why-number">1</div>
+                <h3>Фиксированная смета</h3>
+                <p>Цена не меняется на протяжении всего ремонта. Никаких скрытых расходов и сюрпризов</p>
+            </div>
+            <div class="why-item">
+                <div class="why-number">2</div>
+                <h3>Сдача в срок</h3>
+                <p>Даём гарантию на сроки. Если задержка по нашей вине — возвращаем 50% от остатка</p>
+            </div>
+            <div class="why-item">
+                <div class="why-number">3</div>
+                <h3>Фотоотчёт каждый день</h3>
+                <p>Вы видите процесс работ в реальном времени через мессенджер</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio" id="portfolio">
+        <div class="section-title">Наши работы</div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div class="portfolio-label">Двушка 54м², 2024</div>
+            </div>
+            <div class="portfolio-item" style="background: linear-gradient(135deg, #e0e0e0 0%, #d0d0d0 100%);">
+                <div class="portfolio-label">Однушка 38м², 2024</div>
+            </div>
+            <div class="portfolio-item" style="background: linear-gradient(135deg, #d0d0d0 0%, #c0c0c0 100%);">
+                <div class="portfolio-label">Трёшка 85м², 2024</div>
+            </div>
+            <div class="portfolio-item" style="background: linear-gradient(135deg, #c0c0c0 0%, #b0b0b0 100%);">
+                <div class="portfolio-label">Студия 28м², 2023</div>
+            </div>
+            <div class="portfolio-item" style="background: linear-gradient(135deg, #b0b0b0 0%, #a0a0a0 100%);">
+                <div class="portfolio-label">Офис 120м², 2023</div>
+            </div>
+            <div class="portfolio-item" style="background: linear-gradient(135deg, #a0a0a0 0%, #909090 100%);">
+                <div class="portfolio-label">Магазин 95м², 2023</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews">
+        <div class="section-title">Отзывы клиентов</div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Спасибо команде КраснодарРемонт за профессиональный ремонт! Работали чётко по расписанию, качество превосходит ожидания. Фотоотчёты присылали каждый день. Рекомендую!"</p>
+                <div class="review-author">— Виктория М., Краснодар</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Делали ремонт в моей квартире после протечки. Понравилось, что цена не поменялась с начального расчёта. Очень надёжная компания, сдали даже раньше срока!"</p>
+                <div class="review-author">— Сергей К., Краснодар</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Шикарный дизайн интерьера! Специалист по дизайну помог подобрать цвета и материалы. Ремонт выполнили профессионально. Благодарны за качество и внимание к деталям!"</p>
+                <div class="review-author">— Елена Л., Краснодар</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="form-section" id="form">
+        <div class="form-container">
+            <div class="section-title">Узнайте стоимость ремонта за 5 минут</div>
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" placeholder="Иван" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 (928) 456-78-90" required>
+                </div>
+                <div class="form-group">
+                    <label for="area">Площадь квартиры (м²)</label>
+                    <input type="number" id="area" name="area" placeholder="50" min="10" max="500" required>
+                </div>
+                <button type="submit" class="form-submit">Получить расчёт</button>
+                <div class="form-info">
+                    <strong>Перезвоним в течение 15 минут</strong><br>
+                    Мы обработаем вашу заявку и дадим первичный расчёт в ближайшее время
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p>
+                    <a href="tel:+79284567890">+7 (928) 456-78-90</a><br>
+                    <a href="mailto:info@remont.ru">info@remont.ru</a>
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Адрес</h3>
+                <p>г. Краснодар<br>ул. Красная, 70<br>Корпус 2</p>
+            </div>
+            <div class="footer-section">
+                <h3>Режим работы</h3>
+                <p>Понедельник - Воскресенье<br>9:00 - 21:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 КраснодарРемонт. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll to form
+        function scrollToForm() {
+            const form = document.getElementById('form');
+            form.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Scroll to portfolio
+        function scrollToPortfolio() {
+            const portfolio = document.getElementById('portfolio');
+            portfolio.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form validation and submit
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const area = document.getElementById('area').value.trim();
+
+            // Reset error states
+            document.getElementById('name').classList.remove('error');
+            document.getElementById('phone').classList.remove('error');
+            document.getElementById('area').classList.remove('error');
+
+            // Validation
+            let isValid = true;
+
+            if (!name) {
+                document.getElementById('name').classList.add('error');
+                isValid = false;
+            }
+
+            if (!phone || phone.length < 10) {
+                document.getElementById('phone').classList.add('error');
+                isValid = false;
+            }
+
+            if (!area || area < 10 || area > 500) {
+                document.getElementById('area').classList.add('error');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                alert('Пожалуйста, заполните все поля корректно');
+                return;
+            }
+
+            // Success
+            alert('Спасибо! Перезвоним в течение 15 минут');
+            document.getElementById('contactForm').reset();
+        }
+
+        // Add smooth scroll behavior for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
